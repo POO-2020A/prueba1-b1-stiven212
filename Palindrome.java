@@ -1,31 +1,68 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.mycompany.palindrome;
+
 import java.util.Scanner;
 
 /**
-Escribe un programa que pida una cadena al usuario y que revise si esta es un palindromo o no y terminar.
+ *
+ * @author Diseno Xtrmo
+ */
+public class Palindrome {
 
-Un palindromo significa que los caracteres de la cadena son los mismos al leer hacia adelante o hace atras.
-Debes ignorar los espacios, los acentos, puntuaciones y mayusculas y minusculas.
+    public static void main(String[] args) {
+        Scanner inp = new Scanner(System.in);
+        System.out.print("In:");
+        String s = inp.nextLine();
+        //write your code below
 
-Ejemplos de palindromos:
-Amor a Roma
-Bob
-Somos o no somos
-Acaso hubo buhos aca.
-Ana, la tacana catalana
-racecar
-was it a car or a cat I saw
-never odd or even
-rats live on no evil star
+        String normal = "";
+        String viceversa = "";
+        s.replace("á", "a");
+        s.replace("é", "e");
+        s.replace("í", "i");
+        s.replace("ó", "o");
+        s.replace("ú", "u");
 
-El programa debe imprimir true si es un palindromo y false si no lo es.
-*/
-class Palindrome {
-  public static void main(String[] args) {
-    Scanner inp = new Scanner(System.in);
-    System.out.print("In:");
-    String s = inp.nextLine();
-   	//write your code below
-   	
-   	
-  }
+        for (int i = 0; i < s.length(); i++) {
+
+            if (!s.substring(i, i + 1).equals(" ")) {
+                s.replace("á", "a");
+                s.replace("é", "e");
+                s.replace("í", "i");
+                s.replace("ó", "o");
+                s.replace("ú", "u");
+
+                normal += s.substring(i, i + 1).toLowerCase();
+
+            }
+
+        }
+      //  System.out.println(normal);
+        for (int i = s.length()-1 ; i >= 0; i--) {
+
+            if (!s.substring(i, i + 1).equals(" ")) {
+                s.replace("á", "a");
+                s.replace("é", "e");
+                s.replace("í", "i");
+                s.replace("ó", "o");
+                s.replace("ú", "u");
+
+                viceversa += s.substring(i, i + 1).toLowerCase();
+
+            }
+
+        }
+       // System.out.println(viceversa);
+        
+        if(normal.equals(viceversa)){
+            System.out.println("true");
+        }else{
+            System.out.println("false");
+        }
+
+    }
 }

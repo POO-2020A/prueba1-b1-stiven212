@@ -27,6 +27,5 @@ public class SumOddsRange {
     }
         System.out.println(sum);
     
-  }
-    
+  } 
 }

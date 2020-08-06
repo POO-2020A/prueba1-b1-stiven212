@@ -52,7 +52,6 @@ public class Palindrome {
                 s.replace("ú", "u");
 
                 viceversa += s.substring(i, i + 1).toLowerCase();
-
             }
 
         }
